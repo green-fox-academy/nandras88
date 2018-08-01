@@ -1,2 +1,3 @@
 # nandras88
-Yeah, that's my first REPO
+[GitHub](https://github.com/nandras88/git-lesson-repository)
+
