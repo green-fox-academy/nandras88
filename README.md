@@ -1,3 +1,3 @@
 # nandras88
-[GitHub](https://github.com/nandras88/git-lesson-repository)
+[Andrew First Task](https://github.com/nandras88/git-lesson-repository)
 
