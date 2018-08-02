@@ -49,10 +49,10 @@ let squared = i2 * i2;
 let cube = i2 * i2 * i2;
 
 if ( i1 > squared && i1 < cube ){
-    console.log ( i3 );
+    console.log( i3 );
 } else {
     i3 = false;
-    console.log ( i3 );
+    console.log( i3 );
 }
 
 let j: number = 1521;
@@ -63,16 +63,16 @@ if ( j % 3 == 0 || j % 5 == 0 ){
 }
 
 let k: string = "Apple";
-console.log( k + k + k + k);
+console.log ( k + k + k + k);
 
 let sideA: number = 10;
 let sideB: number = 10;
 let sideC: number = 10;
 let volume: number = sideA * sideB * sideC;
-let SurfaceArea: number = ( (sideA * sideA) * 2 ) + ( ( sideB * sideB ) *2 ) + ( ( sideC * sideC) *2 );
+let SurfaceArea: number =( (sideA * sideA) * 2 ) + ( ( sideB * sideB ) *2 ) + ( ( sideC * sideC) *2 );
 
-console.log( "Volume " + volume );
-console.log( "Surface Area " + SurfaceArea);
+console.log ( "Volume " + volume );
+console.log ( "Surface Area " + SurfaceArea );
 
 let currentHours: number = 14;
 let currentMinutes: number = 34;
@@ -80,7 +80,7 @@ let currentSeconds: number = 42;
 let totalSecondInADay: number = 86400;
 let currentHoursInMinute: number = 50400;
 let currentMinutesInSecond: number = 2040;
-let remainingSeconds: number = ( totalSecondInADay - currentHoursInMinute - currentMinutesInSecond - currentSeconds );
+let remainingSeconds: number =( totalSecondInADay - currentHoursInMinute - currentMinutesInSecond - currentSeconds );
 
 console.log(remainingSeconds);
 
@@ -133,10 +133,14 @@ console.log(out3);
 
 let q = 0;
 let exam = " I won\'t cheat on the exam!!";
-for ( q = 0; q < 100; q ++) {
+for ( q = 0; q < 101; q ++) {
     console.log (exam);
 }
 
+let z = 0;
+for( z = 0; z < 501; z++) {
+    console.log(z);
+}
 
 
 
