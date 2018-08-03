@@ -149,15 +149,30 @@ for ( zs; zs < 11; zs++ ){
 }
 
 
+for ( let zs1 = 0; zs1 < 101; zs1++) {
+    if ( zs1 % 3 == 0 && zs1 % 5 == 0) {
+        console.log ( "FizzBuzz" );
+}
+else if ( zs1 % 3 == 0 ) {
+    console.log( "Fizz" );
+}
+else if ( zs1 % 5 == 0 ){
+    console.log ( "Buzz" );
+}
+else  {
+     console.log ( zs1 );
+}
+}
 
+let LineCount: number = 4;
+let peter: string[] = [];
 
-
-
-
-
-
-
+for ( let zs = 1 ; zs < 5; zs ++) {
+    peter.push ( "*" );
+    console.log( peter.join ("") );
     
+
+}
  
 
 
