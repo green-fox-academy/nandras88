@@ -142,6 +142,11 @@ for( z = 0; z < 501; z++) {
     console.log(z);
 }
 
+let number: number = 15;
+let zs: number = 1;
+for ( zs; zs < 11; zs++ ){
+    console.log( zs  + ' * ' + number + ' = ' + zs * number );
+}
 
 
 
