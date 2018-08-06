@@ -6,8 +6,9 @@
 
 let named: string = 'Greenfox';
 
-function greet(firstTag:string = 'Andras'){
-    console.log('Greeetings, dear ' +  firstTag);
+function greet(inputName: string = 'Andras') {
+    console.log('Greeetings, dear ' + inputName);
 
 }
 greet();
+greet(named);
