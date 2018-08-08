@@ -16,7 +16,7 @@ for (let i: number = 0; i < 19; i++) {
   ctx.fillRect(x, y, sideOfRectangle , sideOfRectangle);
   x += sideOfRectangle +5;
   y += sideOfRectangle +5;
-}
+ }
 }
 
 drawPurpleSteps();
