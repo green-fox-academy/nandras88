@@ -9,14 +9,26 @@
 const fs = require('fs');
 const charSet = 'utf-8';
 
-function readFileFrom(filename: string) {
-  
+function readFileFrom(fileName: string) {
   try {
-    return fs.readFileSync(filename, charSet);
+    return fs.readFileSync(fileName, charSet);
   } catch (error) {
     console.log('0');
-
   }
 }
 
-readFileFrom('results.txt');
+readFileFrom('result.txt');
+
+function countLines() {
+  let fileContent = readFileFrom('result.txt');
+  let countLines = 0;
+  fileContent.split('\n').forEach(element => {
+    countLines++;
+
+  });
+  console.log(countLines);
+}
+
+countLines();
+
+//console.log(fileContent.split('\n').length); Solution B
