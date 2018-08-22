@@ -28,7 +28,7 @@ export class Reservation implements Reservationy {
 
   creatBooking() {
     for(let j: number = 0; j <= 20; j++ ){
-      console.log('Booking # ' + this.getCodeBooking() + ' for ' + this.getDowBooking());
+      console.log('Booking# ' + this.getCodeBooking() + ' for ' + this.getDowBooking());
     }
   }
 
