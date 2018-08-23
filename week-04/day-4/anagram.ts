@@ -1,14 +1,12 @@
 'use strict';
 
+let characters: any[] = [' ', '!', '.', ',', "'", '"', '?']
 
 export function anagram(inputString: string, inputString2: string): boolean {
-  if (inputString.toLowerCase().split('').sort().filter(element => [' ', '!', '.', ',', "'", '"', '?'].indexOf(element) == -1).join() ==
-    inputString2.toLowerCase().split('').sort().filter(element => [' ', '!', '.', ',', "'", '"', '?'].indexOf(element) == -1).join()) {
-    return true;
-  } else {
-    return false;
-  }
-
+  return (inputString.toLowerCase().split('').sort().filter(element => characters.indexOf(element) == -1).join() ==
+    inputString2.toLowerCase().split('').sort().filter(element => characters.indexOf(element) == -1).join()) ;
+  
+  
 }
 
 console.log(anagram('was', 'saw'));
