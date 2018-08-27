@@ -8,7 +8,6 @@ function anagramm(inputString: string, inputString2: string): boolean {
 
 
 function checkAnagrams(param: string) {
-  param.toLowerCase().split('').sort().filter(element => characterSet.indexOf(element) == -1).join()
+  param = param.toLowerCase().split('').sort().filter(element => characterSet.indexOf(element) == -1).join('');
+  return param;
 }
-
-
