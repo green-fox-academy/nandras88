@@ -1,40 +1,64 @@
-//Create an Animal class
-//Every animal has a hunger value, which is a whole number
-//Every animal has a thirst value, which is a whole number
-//when creating a new animal object these values are created with the default 50 value
-//Every animal can eat() which decreases their hunger by one
-//Every animal can drink() which decreases their thirst by one
-//Every animal can play() which increases both by one
+import { createSecureContext } from "tls";
 
-class Animal {
+export class Animal {
+
   hunger: number;
   thirst: number;
 
   constructor(hunger: number = 50, thirst: number = 50) {
     this.hunger = hunger;
     this.thirst = thirst;
+  }
+  eat(): number {
+    return this.hunger--;
+  }
+  drink(): number {
+    return this.thirst--;
+  }
+  play(): number {
+    return this.hunger++ , this.thirst++;
 
   }
-  eat() {
-    this.hunger--;
+
+}
+
+export class Farm {
+
+  listOfAnimals: Animal[] = [];
+
+  constructor() {
+
   }
-  drink() {
-    this.thirst--;
+  breed(): void {
+    if (this.listOfAnimals.length < 5) {
+      let creature = new Animal(20, 30);
+      this.listOfAnimals.push(creature);
+    } else {
+      console.log(`Sorry Mate We do not have any slots`)
+    }
   }
-  play() {
-    this.hunger++;
-    this.thirst++;
+  add(animal: Animal): void {
+    this.listOfAnimals.push(animal);
+  }
+  slaughter() {
+    this.listOfAnimals.sort(function (a, b) {
+      return b.hunger - a.hunger;
+
+    });
+    this.listOfAnimals.splice(0, 1);
   }
 }
 
-let sheep: Animal = new Animal();
-let cat: Animal = new Animal();
-let dog: Animal = new Animal();
+let gergo: Animal = new Animal();
+let nagyG: Animal = new Animal(30, 20);
+let bigB: Animal = new Animal(100, 100);
 
+let farmWhereWeLive: Farm = new Farm();
+farmWhereWeLive.add(gergo);
+farmWhereWeLive.add(nagyG);
+farmWhereWeLive.add(bigB);
 
-sheep.play();
-console.log(sheep);
-
-dog.drink();
-console.log(dog);
+gergo.eat();
+farmWhereWeLive.slaughter();
+console.log(farmWhereWeLive.listOfAnimals);
 
