@@ -73,8 +73,9 @@ typings/
 .serverless
 
 ### VisualStudioCode ###
-.vscode/*
-!.src/main
+./.vscode/*
+./src/*
+!.src/main.c
 ./Makefile
 ### C ###
 # Prerequisites
