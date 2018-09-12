@@ -73,12 +73,12 @@ typings/
 .serverless
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode/
 .vscode/launch.json
 .vscode/tasks.json
-.src/*
 !.src/main.c
-./Makefile
+.src/
+Makefile
 ### C ###
 # Prerequisites
 *.d
