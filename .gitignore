@@ -1,3 +1,6 @@
+# Just C files
+!*.c
+
 # Logs
 logs
 *.log
