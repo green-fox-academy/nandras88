@@ -78,7 +78,7 @@ typings/
 .vscode/tasks.json
 !/main.c
 .src/
-/main
+/main.exec
 Makefile
 ### C ###
 # Prerequisites
