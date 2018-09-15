@@ -13,15 +13,24 @@ int main()
   int promptNumber = 8;
   int guessNumber = 0;
 
-  while (guessNumber != promptNumber)
+  do
   {
     printf("Guess a number:\n");
-    scanf("%d", &guessNumber);
-  }
+    scanf(" %d", &guessNumber);
+    if (guessNumber < promptNumber)
+    {
+      printf("The stored number is higher\n");
+    }
+    else if (guessNumber > promptNumber)
+    {
+      printf("The stored number is lower\n");
+    }
+
+  } while (guessNumber != promptNumber);
 
   if (guessNumber == promptNumber)
   {
-    printf("You find the number %d!\n", promptNumber);
+    printf("You find the number %d\n", promptNumber);
   }
 
   return (0);
