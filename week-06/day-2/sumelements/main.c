@@ -8,5 +8,8 @@
 int main()
 {
 
+	int r[4] = {54, 23, 66, 12};
+	printf("The result is %d", r[1] + r[2]);
+
 	return 0;
 }
