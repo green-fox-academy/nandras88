@@ -21,7 +21,12 @@ int main()
 
   for (int k = 0; k < size; k++)
   {
-    printf("%d\n", temp[k]);
+    aj[k] = temp[k];
+  }
+
+  for (int j = 0; j < size; j++)
+  {
+    printf("The corrected array is %d\n", aj[j]);
   }
   return 0;
 }
