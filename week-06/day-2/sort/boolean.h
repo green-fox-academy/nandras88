@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int isItBoolean(int *inputArray, int sizeOfArray)
+int *isItBoolean(int *inputArray, int sizeOfArray)
 {
+
     int right = 0;
     int notRight = 0;
     int boolean = 0;
@@ -18,5 +19,5 @@ int isItBoolean(int *inputArray, int sizeOfArray)
     if (right > 0 && notRight == 1)
         boolean += 1;
 
-    return boolean;
+    return &boolean;
 }

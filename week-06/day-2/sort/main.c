@@ -12,18 +12,7 @@ int main()
   int sorted[] = {1, 2, 3, 4, 5, 6};
   int sizeOfSort = sizeof(sorted) / sizeof(sorted[0]);
 
-  if (isItBoolean(sorted, sizeOfSort) == 1)
-  {
-    printf("The array is sorted");
-  }
-  else
-  {
-    sort(sorted, sizeOfSort);
-    for (int i = 0; i < size; i++)
-    {
-      printf("The sorted order is %d\n", numbers[i]);
-    }
-  }
+  sort(numbers, size, *isItBoolean(numbers, size));
 
   return 0;
 }
