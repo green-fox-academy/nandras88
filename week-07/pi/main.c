@@ -4,6 +4,8 @@ int main()
 {
     int rad = 10;
 
-    printf("The area size is %d", areaCalculator(rad));
+    printf("The area size is %d\n", areaCalculator(rad));
+    printf("The circumference is %d\n", circumFerence(rad));
+
     return 0;
 }
