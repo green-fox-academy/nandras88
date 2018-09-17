@@ -3,3 +3,4 @@
 #define PI 3.14
 
 int areaCalculator(int radius);
+int circumFerence(int radius);
