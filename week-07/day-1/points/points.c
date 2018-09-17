@@ -26,12 +26,14 @@ typedef struct
 } Point;
 
 Point create_point(float a, float b);
+float distance(Point one, Point two);
 
 int main()
 {
     Point p1 = create_point(1, 1);
     Point p2 = create_point(1, 5.5);
-    printf("%.1f", p2.y);
+    float dist = distance(p1, p2);
+    printf("%f", dist);
 
     return 0;
 }
@@ -41,4 +43,13 @@ Point create_point(float a, float b)
     p1.x = a;
     p1.y = b;
     return p1;
+}
+
+float distance(Point one, Point two)
+{
+
+    float distanceOfpoints = ((two.x - one.x) * (two.x - one.x)) + ((two.y - one.y) * (two.y - one.y));
+    float distances = sqrt(distanceOfpoints);
+
+    return distances;
 }
