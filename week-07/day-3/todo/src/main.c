@@ -4,7 +4,6 @@ int counter;
 
 int main()
 {
-
 	todo_t listOfTodo[20];
 
 	getBasicScreen();
