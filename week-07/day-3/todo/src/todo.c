@@ -43,6 +43,7 @@ void addTask(todo_t *inputArray)
     ++*count;
     printf("Please add me a task\n");
     scanf("%s", inputArray[counter - 1].todo);
+    inputArray[counter - 1].completed = 0;
 }
 
 void removeTask(todo_t *inputArray)
@@ -67,12 +68,12 @@ void completedTask(todo_t *inputArray)
 
     for (int i = 0; i < counter; i++)
     {
-        if (index - 1 == i && inputArray[i].completed == 0)
+        if (index - 1 == i || inputArray[i].completed >= 1)
         {
-            printf("%d - [x] %s\n", i + 1, inputArray[i].todo);
             inputArray[i].completed++;
+            printf("%d - [x] %s\n", i + 1, inputArray[i].todo);
         }
-        else if (inputArray[i].completed == 0)
+        else
         {
             printf("%d - [ ] %s\n", i + 1, inputArray[i].todo);
         }
