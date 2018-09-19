@@ -26,7 +26,7 @@ void listTasks(todo_t *inputarray)
 {
     if (counter == 0)
     {
-        printf("There is no TODO for today");
+        printf("There is no TODO for today\n");
     }
     else
     {
