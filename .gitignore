@@ -137,3 +137,49 @@ Module.symvers
 Mkfile.old
 dkms.conf
 .vscode/extensions.json
+
+# Prerequisites
+*.d
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+# Linker output
+*.ilk
+*.map
+*.exp
+# Precompiled Headers
+*.gch
+*.pch
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+# Kernel Module Compile Results
+*.mod*
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+#Eclipse related
+Debug/
+Release/
+HAL_Driver
+Startup/
+CMSIS/
+Utilities/
+*.cfg
+STM32F746G-DISCO.xml
+.settings/
+#ceedling
+build/
