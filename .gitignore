@@ -178,6 +178,8 @@ HAL_Driver
 Startup/
 CMSIS/
 Utilities/
+.project
+linkerScript.id
 *.cfg
 STM32F746G-DISCO.xml
 .settings/
