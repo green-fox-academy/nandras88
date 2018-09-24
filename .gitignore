@@ -180,7 +180,7 @@ CMSIS/
 Utilities/
 .project
 .cproject
-linkerScript.id
+LinkerScript.ld
 *.cfg
 STM32F746G-DISCO.xml
 .settings/
