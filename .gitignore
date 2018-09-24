@@ -179,6 +179,7 @@ Startup/
 CMSIS/
 Utilities/
 .project
+.cproject
 linkerScript.id
 *.cfg
 STM32F746G-DISCO.xml
