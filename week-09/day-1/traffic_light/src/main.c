@@ -8,6 +8,8 @@
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef uart_handle;
 TIM_HandleTypeDef TimHandle;
+TIM_HandleTypeDef TimeHandle;
+TIM_HandleTypeDef TimerHandle;
 
 GPIO_InitTypeDef led;
 
@@ -74,6 +76,10 @@ int main(void) {
 	;
 	__HAL_RCC_TIM2_CLK_ENABLE()
 	;
+	__HAL_RCC_TIM3_CLK_ENABLE()
+		;
+	__HAL_RCC_TIM4_CLK_ENABLE()
+		;
 
 	GPIO_InitTypeDef red;
 	red.Pin = GPIO_PIN_0;
@@ -102,23 +108,42 @@ int main(void) {
 	//the timer's config structure
 
 	TimHandle.Instance = TIM2;
-	TimHandle.Init.Period = 33333;
+	TimHandle.Init.Period = 30000;
 	TimHandle.Init.Prescaler = 32400 - 1;
 	TimHandle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
 	TimHandle.Init.CounterMode = TIM_COUNTERMODE_UP;
 
-	HAL_TIM_Base_Init(&TimHandle);            //Configure the timer
+	TimeHandle.Instance = TIM3;
+	TimeHandle.Init.Period = 30000;
+	TimeHandle.Init.Prescaler = 32400 - 1;
+	TimeHandle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+	TimeHandle.Init.CounterMode = TIM_COUNTERMODE_UP;
+
+	TimerHandle.Instance = TIM4;
+	TimerHandle.Init.Period = 30000;
+	TimerHandle.Init.Prescaler = 32400 - 1;
+	TimerHandle.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+	TimerHandle.Init.CounterMode = TIM_COUNTERMODE_UP;
+
+	HAL_TIM_Base_Init(&TimHandle);
+	HAL_TIM_Base_Init(&TimeHandle);
+	HAL_TIM_Base_Init(&TimerHandle);   //Configure the timer
 
 	HAL_TIM_Base_Start(&TimHandle);
+	HAL_TIM_Base_Start(&TimeHandle);
+	HAL_TIM_Base_Start(&TimerHandle);
 
 	while (1) {
 		int timerValue = __HAL_TIM_GET_COUNTER(&TimHandle);
-		if (timerValue > 11000 && timerValue < 11120) {
+		int timerTwoValue = __HAL_TIM_GET_COUNTER(&TimeHandle);
+		int timerThreeValue = __HAL_TIM_GET_COUNTER(&TimerHandle);
+
+		if (timerValue == 10000) {
 			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
-		} else if (timerValue > 22200 && timerValue < 22240) {
+		}  if (timerTwoValue == 20000) {
 			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
-		} else if (timerValue > 33300 && timerValue < 33333) {
+		}  if (timerThreeValue == 30000) {
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
