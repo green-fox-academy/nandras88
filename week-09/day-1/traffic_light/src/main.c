@@ -99,7 +99,7 @@ int main(void) {
 
 	HAL_GPIO_Init(GPIOF, &green);
 
-	          //the timer's config structure
+	//the timer's config structure
 
 	TimHandle.Instance = TIM2;
 	TimHandle.Init.Period = 33333;
@@ -111,9 +111,19 @@ int main(void) {
 
 	HAL_TIM_Base_Start(&TimHandle);
 
-
 	while (1) {
+		int timerValue = __HAL_TIM_GET_COUNTER(&TimHandle);
+		if (timerValue > 11000 && timerValue < 11120) {
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
+		} else if (timerValue > 22200 && timerValue < 22240) {
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
+		} else if (timerValue > 33300 && timerValue < 33333) {
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, GPIO_PIN_SET);
 
+		}
 
 	}
 }
