@@ -105,7 +105,6 @@ int main(void) {
 		if (count == 0) {
 			if (timerValue == 3332) {
 				numbers--;
-				printf("The remaining time is :\n");
 				printf("%d\n", numbers);
 			}
 			if (numbers == 0) {
